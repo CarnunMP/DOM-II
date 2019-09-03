@@ -91,3 +91,10 @@ textContentDivs.forEach(div => {
     });
 });
 // Looks to be working!
+
+// 'Stop the navigation from items from refreshing the page by using `preventDefault()`':
+anchorsArray.forEach(a => {
+    a.addEventListener("click", e => {
+        e.preventDefault();
+    });
+});
