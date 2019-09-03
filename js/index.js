@@ -46,3 +46,14 @@ window.addEventListener("wheel", (event) => {
         image.style.opacity = Math.min(1, imageOpacity).toString();
     }
 }, {passive: false}); // (Chrome ignores .preventDefault() otherwise, in this case.)
+
+// Allows the user to change the position of the logo with a drag/drop:
+let logo = document.body.querySelector(".logo-heading");
+logo.setAttribute("draggable", "true");
+logo.style.position = "relative";
+logo.addEventListener("dragend", (event) => {
+    console.log(event.offsetX);
+    logo.style.left = `${event.offsetX}px`; // This doesn't quite work as expected... but I'm not sure why!
+});
+
+document.querySelector("h1").style.background = "red";
