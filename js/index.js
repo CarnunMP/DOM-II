@@ -52,8 +52,6 @@ let logo = document.body.querySelector(".logo-heading");
 logo.setAttribute("draggable", "true");
 logo.style.position = "relative";
 logo.addEventListener("dragend", (event) => {
-    console.log(event.offsetX);
     logo.style.left = `${event.offsetX}px`; // This doesn't quite work as expected... but I'm not sure why!
 });
 
-document.querySelector("h1").style.background = "red";
