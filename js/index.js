@@ -76,3 +76,18 @@ buttons.forEach(button => {
     });
 });
 // This also doesn't work??
+
+// Alright, time to change focus. I feel I've got event listeners down: no use getting caught up in the details!
+
+// 'Nest two similar events somewhere in the site and prevent the event propagation properly':
+let textContentDivs = document.querySelectorAll(".text-content");
+textContentDivs.forEach(div => {
+    div.addEventListener("click", () => {
+        div.style.border = "2px solid black";
+    })
+    div.children[0].addEventListener("click", e => {
+        div.children[0].style.background = "red";
+        e.stopImmediatePropagation();
+    });
+});
+// Looks to be working!
