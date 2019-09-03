@@ -55,3 +55,24 @@ logo.addEventListener("dragend", (event) => {
     logo.style.left = `${event.offsetX}px`; // This doesn't quite work as expected... but I'm not sure why!
 });
 
+// Makes everything inside a div 'wiggle' on load:
+let everyDiv = document.body.querySelectorAll("div");
+let everything = [];
+everyDiv.forEach(div => {
+    Array.from(div.children).forEach(thing => {
+        // thing.addEventListener("load", wiggle(thing));
+        everything.push(thing);
+    });
+});
+// Hmm. Got lost trying to figure out animations in JS. Will get back to this!
+
+// Changes background colour of the buttons on focus:
+let buttons = document.querySelectorAll(".btn");
+buttons.forEach(button => {
+    button.setAttribute("focusable", "true");
+    button.addEventListener("focus", event => {
+        console.log(event);
+        event.target.style.background = "red";
+    });
+});
+// This also doesn't work??
